@@ -1,5 +1,5 @@
 <?php
-$id = $_GET['id'];
+$id = $_GET['post_id'];
 
 $post = DB('*', 'post', 'id=' . $id);
 
