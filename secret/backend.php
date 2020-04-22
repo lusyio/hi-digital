@@ -41,11 +41,11 @@ if (!empty($_POST['title'])) :
 
 endif;
 
-if (!empty($_POST['del'])) :
+if (!empty($_POST['del_id'])) :
 
     $sql = "DELETE FROM post WHERE id =  :id";
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':id', $_POST['id'], PDO::PARAM_INT);
+    $stmt->bindParam(':id', $_POST['del_id'], PDO::PARAM_INT);
     $stmt->execute();
 
     echo '<div class="infoblock"><p>Запись удалена</p></div>';

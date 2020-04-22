@@ -41,6 +41,16 @@ body {
     border: 1px solid #6b1cc5;
 }
 
+.btn-del {
+    background-color: crimson;
+    border: 1px solid crimson;
+}
+
+.btn-del:hover {
+    background-color: #821235;
+    border: 1px solid #821235;
+}
+
 input {
     display: block;
     width: 100%;

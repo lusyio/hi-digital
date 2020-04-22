@@ -21,6 +21,10 @@
             </script>
             <button type="submit" name="save" class="btn">Сохранить</button>
         </form>
+         <form method="post" action="editor.php">
+             <input type="text" name="del_id" value="<?=$id;?>" style="display: none" hidden>
+            <button type="submit" name="del" class="btn btn-del">Удалить</button>
+        </form>
 
 
 
