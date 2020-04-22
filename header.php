@@ -14,4 +14,5 @@ include 'conf.php';
 <body>
 <div class="container">
     <a href="/">Главная</a>
+    <a href="/secret/">Неглавная</a>
 </div>
