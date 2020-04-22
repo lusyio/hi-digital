@@ -12,3 +12,6 @@ include 'conf.php';
 </head>
 
 <body>
+<div class="container">
+    <a href="/">Главная</a>
+</div>

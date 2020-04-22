@@ -69,3 +69,19 @@ input {
     border-radius: 15px;
     margin-bottom: 15px;
 }
+.post-body {
+    background-color: #fff;
+    padding: 35px 20px 60px;
+    color: #000;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+.post-body h1 {
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 0;
+    text-align: center;
+}
+.post-body .problem {
+    color: grey;
+}
