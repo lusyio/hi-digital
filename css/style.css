@@ -1,0 +1,20 @@
+body {
+    background-color: #191919;
+    color: white;
+}
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+.news .item {
+    position: relative;
+    border: 1px solid #EDEDED;
+    padding: 35px 40px;
+    border-radius: 15px;
+}
+.news .item img {
+    position: absolute;
+    max-width: 140px;
+    right: 50px;
+    top: 30px;
+}
