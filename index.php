@@ -62,7 +62,7 @@
                         <?php include 'templates/post-view.php'; ?>
                     <?php else: ?>
                         <p class="main-black__posts">Все выпуски</p>
-                        <div class="post">
+                        <div class="post-list">
                             <?php include 'post-list.php'; ?>
                         </div>
                     <?php endif; ?>
