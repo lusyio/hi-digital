@@ -7,12 +7,13 @@ include 'conf.php';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/css/style.css?ver=1.0.1">
+    <link rel="stylesheet" href="/assets/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/assets/css/style.css?ver=1.0.1">
     <title>Привет, оцифровка!</title>
 </head>
 
 <body>
-<div class="container">
-    <a href="/">Главная</a>
-    <a href="/secret/">Неглавная</a>
-</div>
+<!--<div class="container">-->
+<!--    <a href="/">Главная</a>-->
+<!--    <a href="/secret/">Неглавная</a>-->
+<!--</div>-->
