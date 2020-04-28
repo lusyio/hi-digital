@@ -331,7 +331,7 @@ footer {
 
 .post-view-purple {
     background: #5C3CC5;
-    padding: 80px 0;
+    padding: 5rem 0;
     margin-bottom: 40px;
     margin-top: 40px;
 }
@@ -688,6 +688,11 @@ footer {
     .preFooter .preFooter__header {
         font-size: 2rem;
         line-height: 2.4375rem;
+    }
+
+    .post-view .post-view__title{
+        font-size: 2rem;
+        margin-bottom: 30px;
     }
 
     .post-item .post-item__img{
