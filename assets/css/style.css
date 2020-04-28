@@ -24,6 +24,11 @@ footer {
     background: #131313;
 }
 
+header#header {
+    background: #131313;
+    padding: 50px 0;
+}
+
 :focus {
     outline: none;
 }
@@ -50,6 +55,26 @@ footer {
     flex: 1 1 0%;
     min-width: 0;
     margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-nav a {
+    font-size: 18px;
+    line-height: 120%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.header-nav a:hover {
+    color: #FFFFFF;
 }
 
 /*--------------------------------------------------------------
@@ -557,11 +582,11 @@ footer {
         width: 24rem;
     }
 
-    .post-item{
+    .post-item {
         padding: 20px 15px;
     }
 
-    .post-item .post-item__img{
+    .post-item .post-item__img {
         margin-top: auto;
         margin-bottom: 10px;
     }
@@ -690,12 +715,12 @@ footer {
         line-height: 2.4375rem;
     }
 
-    .post-view .post-view__title{
+    .post-view .post-view__title {
         font-size: 2rem;
         margin-bottom: 30px;
     }
 
-    .post-item .post-item__img{
+    .post-item .post-item__img {
         display: block;
         position: unset;
         margin-bottom: 15px;
@@ -703,13 +728,13 @@ footer {
         margin-right: auto;
     }
 
-    .post-item .post-item__btn{
+    .post-item .post-item__btn {
         display: block;
         width: 100%;
         max-width: 100%;
     }
 
-    .post-item .post-item__title{
+    .post-item .post-item__title {
         margin-bottom: 25px;
     }
 }

@@ -13,6 +13,15 @@ include 'conf.php';
 </head>
 
 <body>
+
+<header id="header" class="d-none">
+    <div class="container">
+        <div class="header-nav">
+            <a href="#">Главная</a>
+        </div>
+    </div>
+</header>
+
 <!--<div class="container">-->
 <!--    <a href="/">Главная</a>-->
 <!--    <a href="/secret/">Неглавная</a>-->
