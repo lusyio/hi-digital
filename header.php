@@ -8,7 +8,7 @@ include 'conf.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/assets/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="/assets/css/style.css?ver=1.0.1">
+    <link rel="stylesheet" href="/assets/css/style.css?ver=1.0.2">
     <title>Привет, оцифровка!</title>
 </head>
 
