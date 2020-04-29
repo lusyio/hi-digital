@@ -35,7 +35,7 @@
 
     const rellaxSlow = new Rellax('.rellax-slow', {
         speed: -1.5,
-        center: true,
+        center: false,
         wrapper: null,
         round: true,
         vertical: true,
