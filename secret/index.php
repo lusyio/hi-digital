@@ -1,4 +1,7 @@
-<?php include '../header.php'; ?>
+<?php
+include 'login.php';
+include '../header.php';
+?>
     <div class="container">
         <a href="editor.php" class="btn">Добавить новый пост</a>
         <hr>
