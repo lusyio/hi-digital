@@ -442,7 +442,13 @@ header#header {
     z-index: 1;
 }
 
+.preFooter-input-group button:hover{
+    background: #e48b0b;
+    cursor: pointer;
+}
+
 .preFooter-input-group button {
+    transition: 135ms ease-in-out;
     display: block;
     background: #F3A73C;
     border-radius: 15px;
