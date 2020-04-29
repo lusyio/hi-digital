@@ -17,10 +17,10 @@
                 </div>
             </div>
         </div>
-        <div class="ellipse-left after-header__svg"></div>
-        <div class="ellipse-right after-header__svg"></div>
-        <img class="lines-left after-header__svg" src="/svg/svg-lines-left.svg" alt="">
-        <img class="lines-right after-header__svg" src="/svg/svg-lines-right.svg" alt="">
+        <div class="ellipse-left after-header__svg rellax"></div>
+        <div class="ellipse-right after-header__svg rellax"></div>
+        <img class="lines-left after-header__svg rellax-slow" src="/svg/svg-lines-left.svg" alt="">
+        <img class="lines-right after-header__svg rellax-slow" src="/svg/svg-lines-right.svg" alt="">
     </div>
 
     <div class="main-black">
@@ -70,6 +70,5 @@
             </div>
         </div>
     </div>
-
 
 <?php include 'footer.php'; ?>

@@ -16,13 +16,50 @@
             </div>
         </div>
     </div>
-    <img class="points" src="/svg/svg-footer-points.svg" alt="">
-    <img class="preFooter__svg lines-left" src="/svg/svg-footer-lines.svg" alt="">
-    <div class="preFooter__svg ellipse-left"></div>
-    <div class="preFooter__svg ellipse-right"></div>
+    <img class="points rellax-slow-footer" src="/svg/svg-footer-points.svg" alt="">
+    <img class="preFooter__svg lines-left rellax-slow-footer" src="/svg/svg-footer-lines.svg" alt="">
+    <div class="preFooter__svg ellipse-left rellax-footer"></div>
+    <div class="preFooter__svg ellipse-right rellax-footer"></div>
 </div>
-
 </body>
+<script type="text/javascript" src="assets/js/rellax.min.js"></script>
+<script>
+    const rellax = new Rellax('.rellax', {
+        speed: -2,
+        center: false,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false
+    });
+
+    const rellaxSlow = new Rellax('.rellax-slow', {
+        speed: -1.5,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false
+    });
+
+    const rellaxFooter = new Rellax('.rellax-footer', {
+        speed: -2,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false
+    });
+
+    const rellaxSlowFooter = new Rellax('.rellax-slow-footer', {
+        speed: -1.5,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false
+    });
+</script>
 <footer>
     <div class="container">
         <div class="footer-menu">

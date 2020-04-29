@@ -254,21 +254,58 @@ header#header {
     border: 1px solid #7B7B7B;
     padding: 25px 200px 25px 40px;
     position: relative;
+    transition: 135ms ease-in-out;
 }
 
 .post-item-link {
     text-decoration: none;
     display: block;
     margin-bottom: 40px;
+}
 
+.post-item-link:not(.disabled):hover .post-item {
+    background: #161616;
+}
+
+.post-item-link:not(.disabled):hover .post-item .post-item__btn {
+    background: #4D2CB4;
 }
 
 .post-item-link:last-of-type {
     margin-bottom: 0;
 }
 
-.post-item.disabled {
+.post-item-link .for-disabled, .post-item-link .for-disabled-text {
+    display: none;
+}
+
+.post-item-link.disabled .for-disabled-text {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.post-item-link.disabled .for-disabled-text img{
+    padding-right: 10px;
+    vertical-align: bottom;
+}
+
+.post-item-link.disabled .for-disabled {
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
     background: rgba(75, 75, 75, 0.5);
+}
+
+.post-item-link.disabled .post-item .post-item__btn {
+    display: none;
 }
 
 .post-item .post-item__problem {
@@ -292,6 +329,7 @@ header#header {
 }
 
 .post-item .post-item__btn {
+    transition: 135ms ease-in-out;
     background: #5C3CC5;
     border-radius: 15px;
     padding: 18px;
