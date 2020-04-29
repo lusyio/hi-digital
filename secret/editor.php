@@ -1,4 +1,7 @@
-<?php include '../header.php'; ?>
+<?php
+include 'login.php';
+include '../header.php';
+?>
 <?php include 'backend.php'; ?>
 <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 <div class="container">
