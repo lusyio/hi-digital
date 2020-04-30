@@ -2,7 +2,6 @@
 
 /conf.php
 /public/upload
-*.htaccess
 
 
 ### macOS ###
@@ -155,4 +154,3 @@ fabric.properties
 
 app/config/db.php
 app/config/db.php
-.htaccess
