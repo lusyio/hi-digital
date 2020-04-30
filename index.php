@@ -11,6 +11,9 @@ $db = new DB($dbName, $dbHost, $dbUser, $DbPassword);
 // Задаем стандартный title
 $pageTitle = 'Привет, оцифровка!';
 
+// Задаем стандартное OpenGraph-изображение
+$imgOpenGraph = 'hidigital';
+
 // проверяем маршрут
 $route = trim($_SERVER['REQUEST_URI'], '/');
 $routeParts = explode('/', $route);
@@ -29,9 +32,13 @@ if ($routeParts[0] == '') {
     // Иначе ищем по ЧПУ
     $postId = $db->firstValue("SELECT id FROM post WHERE friendly_url = :url", [':url' => $routeParts[0]]);
     if ($postId) {
-        // Если нашли по ЧПУ. тто загружаем
+        // Если нашли по ЧПУ, тто загружаем
         $pageTitle = $db->firstValue("SELECT title FROM post WHERE friendly_url = :url", [':url' => $routeParts[0]]);
         $content = __ROOT__ . '/post-view.php';
+        $pathImgOpenGraph = __ROOT__ . '/images/opengraph/'.$route[0].'.jpg';
+        if (file_exists($pathImgOpenGraph)) {
+            $imgOpenGraph = $route[0];
+        }
     }else {
         // иначе 404
         $content = __ROOT__ . '/404.php';
