@@ -6,7 +6,7 @@ include __ROOT__ . '/secret/backend.php';
 <div class="container">
     <a href="/secret/"><- Обратно в админку</a>
     <hr>
-    <form method="post" action="">
+    <form method="post">
         <input type="text" name="id" value="<?= $id; ?>" style="display: none" hidden>
         <input type="text" name="title" value="<?= $title; ?>" placeholder="Название поста" required>
         <input type="text" name="problem" value="<?= $problem; ?>" placeholder="Проблема" required>
@@ -19,7 +19,8 @@ include __ROOT__ . '/secret/backend.php';
             CKEDITOR.instances.body.setData('<?=preg_replace("(\r\n|\n|\r)", "", $body); ?>');
             CKEDITOR.config.width = '100%';
         </script>
-        <button type="submit" name="save" class="btn">Сохранить</button>
+        <button type="submit" formaction="/" name="save" class="btn">Сохранить</button>
+        <button type="submit" formaction="/secret/preview" name="preview" class="btn" formtarget="_blank">Предварительный просмотр</button>
     </form>
     <form method="post" action="">
         <input type="text" name="del_id" value="<?= $id; ?>" style="display: none" hidden>

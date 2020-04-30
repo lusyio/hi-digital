@@ -7,7 +7,16 @@ $icon = '';
 $date = '';
 $friendlyUrl = '';
 
+// Предварительный просмотр
+if (isset($previewMode) && $previewMode) {
+    $postData['title'] = $_POST['title'];
+    $postData['body'] = $_POST['body'];
+    include __ROOT__ . '/post-view.php';
+    return;
+}
+
 if (!empty($_POST['title'])) {
+
     if (empty($_POST['id'])) {
         // новый пост
         $status = 'active';

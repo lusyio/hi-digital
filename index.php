@@ -24,6 +24,11 @@ if ($routeParts[0] == '') {
 } elseif ($routeParts[0] == 'secret') {
     // если secret то открываем админку
     if (isset($routeParts[1]) && $routeParts[1] == 'editor') {
+        // Открываем редактор
+        $content = __ROOT__ . '/secret/editor.php';
+    } elseif (isset($routeParts[1]) && $routeParts[1] == 'preview') {
+        // Открываем предварительный просмотр
+        $previewMode = true;
         $content = __ROOT__ . '/secret/editor.php';
     } else {
         $content = __ROOT__ . '/secret/index.php';
@@ -33,13 +38,15 @@ if ($routeParts[0] == '') {
     $postId = $db->firstValue("SELECT id FROM post WHERE friendly_url = :url", [':url' => $routeParts[0]]);
     if ($postId) {
         // Если нашли по ЧПУ, тто загружаем
-        $pageTitle = $db->firstValue("SELECT title FROM post WHERE friendly_url = :url", [':url' => $routeParts[0]]);
+        $postData = $db->firstRow("SELECT * FROM post WHERE friendly_url = :url", [':url' => $routeParts[0]]);
+        $pageTitle = $postData['title'];
+        $previewMode = false;
         $content = __ROOT__ . '/post-view.php';
         $pathImgOpenGraph = __ROOT__ . '/images/opengraph/'.$route[0].'.jpg';
         if (file_exists($pathImgOpenGraph)) {
             $imgOpenGraph = $route[0];
         }
-    }else {
+    } else {
         // иначе 404
         http_response_code(404);
         $content = __ROOT__ . '/404.php';
