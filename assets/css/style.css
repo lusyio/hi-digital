@@ -51,8 +51,8 @@ header#header {
 
 .input-group > .custom-file, .input-group > .custom-select, .input-group > .form-control, .input-group > .form-control-plaintext {
     position: relative;
-    -ms-flex: 1 1 0%;
-    flex: 1 1 0%;
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
     min-width: 0;
     margin-bottom: 0;
 }
@@ -287,7 +287,7 @@ header#header {
     color: #FFFFFF;
 }
 
-.post-item-link.disabled .for-disabled-text img{
+.post-item-link.disabled .for-disabled-text img {
     padding-right: 10px;
     vertical-align: bottom;
 }
@@ -348,7 +348,7 @@ header#header {
     max-width: 8.125rem;
     position: absolute;
     right: 5.3125rem;
-    top: 0%;
+    top: 0;
     margin: auto;
     bottom: 0;
 }
@@ -357,57 +357,62 @@ header#header {
 ## Post-view
 --------------------------------------------------------------*/
 
-.post-view-container {
+.post-view .post-view__title {
     max-width: 800px;
     width: 100%;
-    margin: auto;
-}
-
-.post-view .post-view__title {
     font-weight: normal;
     font-size: 3rem;
     line-height: 120%;
     text-align: center;
     color: #0A0A0A;
-    margin-bottom: 60px;
+    margin: auto auto 60px;
 }
 
-.post-view-container p {
+.post-view p {
+    max-width: 800px;
+    width: 100%;
     font-weight: 300;
     font-size: 1.375rem;
     line-height: 150%;
     color: #0A0A0A;
-    margin-bottom: 20px;
+    margin: auto auto 20px;
 }
 
-.post-view-container p b {
+.post-view p b {
     font-weight: bold;
 }
 
-.post-view-container img {
-    display: block;
+.post-view img {
+    max-width: 800px;
     width: 100%;
-    max-width: 100%;
+    display: block;
     height: auto;
-    margin-bottom: 40px;
+    margin: auto auto 40px;
 }
 
-.post-view-purple {
+.post-view .container-fluid {
+    padding: 40px 0 0 0;
+}
+
+.post-view blockquote {
     background: #5C3CC5;
     padding: 5rem 0;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin: 0;
+    margin-block-start: 40px;
+    margin-block-end: 40px;
 }
 
-.post-view-purple .post-view-container p {
+.post-view blockquote p {
+    max-width: 800px;
+    width: 100%;
     font-weight: normal;
     font-size: 1.25rem;
     line-height: 150%;
     color: #FFFFFF;
-    margin-bottom: 20px;
+    margin: auto auto 20px;
 }
 
-.post-view-purple .post-view-container p:last-of-type {
+.post-view blockquote p:last-of-type {
     margin-bottom: 0;
 }
 
@@ -442,7 +447,7 @@ header#header {
     z-index: 1;
 }
 
-.preFooter-input-group button:hover{
+.preFooter-input-group button:hover {
     background: #e48b0b;
     cursor: pointer;
 }
@@ -549,7 +554,7 @@ header#header {
     width: 24.0625rem;
     height: 24.0625rem;
     border-radius: 50%;
-    bottom: 0rem;
+    bottom: 0;
     right: -5rem;
     z-index: 0;
 }
@@ -634,6 +639,10 @@ header#header {
         margin-top: auto;
         margin-bottom: 10px;
     }
+
+    .post-view blockquote p, .post-view p, .post-view img {
+        padding: 0 15px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -687,8 +696,7 @@ header#header {
 
     .footer-menu a {
         display: table;
-        margin: auto;
-        margin-bottom: 15px;
+        margin: auto auto 15px;
     }
 
     .footer-menu a:last-of-type {
