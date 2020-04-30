@@ -41,6 +41,7 @@ if ($routeParts[0] == '') {
         }
     }else {
         // иначе 404
+        http_response_code(404);
         $content = __ROOT__ . '/404.php';
     }
 }
