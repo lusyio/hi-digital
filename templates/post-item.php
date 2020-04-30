@@ -1,4 +1,4 @@
-<a class="post-item-link" href="/<?= $id; ?>">
+<a class="post-item-link" href="/<?= $url; ?>">
     <div class="post-item">
         <p class="post-item__problem">Проблема: <span><?= $problem; ?></span></p>
         <h2 class="post-item__title"><?= $title; ?></h2>

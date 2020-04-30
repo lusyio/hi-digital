@@ -1,4 +1,3 @@
-<?php include 'header.php'; ?>
 <div class="post-view">
     <div class="container">
         <div class="post-view-container">
@@ -59,9 +58,7 @@
     <div class="container">
         <p class="main-black__posts">Все выпуски</p>
         <div class="post-list">
-            <?php include 'post-list.php'; ?>
+            <?php include __ROOT__ . '/post-list.php'; ?>
         </div>
     </div>
 </div>
-<?php include 'footer.php'; ?>
-

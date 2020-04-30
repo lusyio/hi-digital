@@ -5,48 +5,51 @@ $problem = '';
 $body = '';
 $icon = '';
 $date = '';
+$friendlyUrl = '';
 
-if (!empty($_GET['id'])) :
-
-    $id = $_GET['id'];
-
-    $postinfo = DB('*', 'post', 'id=' . $id);
-
-    foreach ($postinfo as $p) :
-        $title = $p['title'];
-        $problem = $p['problem'];
-        $body = $p['body'];
-        $icon = $p['icon'];
-        $date = $p['date'];
-    endforeach;
-
-endif;
-
-if (!empty($_POST['title'])) :
-
-    if (empty($_POST['id'])) :
+if (!empty($_POST['title'])) {
+    if (empty($_POST['id'])) {
         // новый пост
         $status = 'active';
-        $sql = "INSERT INTO post (title, status, body, problem, icon, date) VALUES (?,?,?,?,?,?)";
-        $pdo->prepare($sql)->execute([$_POST['title'], $status, $_POST['body'], $_POST['problem'], $_POST['icon'], $_POST['date']]);
-
+        $queryArgs = [
+            ':title' => $_POST['title'],
+            ':status' => $status,
+            ':body' => $_POST['body'],
+            ':problem' => $_POST['problem'],
+            ':icon' => $_POST['icon'],
+            ':date' => $_POST['date'],
+            ':friendlyUrl' => $_POST['friendlyUrl'],
+        ];
+        $db->query("INSERT INTO post (title, status, body, problem, icon, date, friendly_url) VALUES (:title, :status, :body, :problem, :icon, :date, :friendlyUrl)", $queryArgs);
         echo '<div class="infoblock"><p>Запись создана</p></div>';
-    else:
+    } else {
         // обновление старого
-        $sql = "UPDATE post SET title=?, body=?, problem=?, icon=?, date=? WHERE id=?";
-        $pdo->prepare($sql)->execute([$_POST['title'], $_POST['body'], $_POST['problem'], $_POST['icon'], $_POST['date'], $_POST['id']]);
-
+        $queryArgs = [
+            ':id' => $_POST['id'],
+            ':title' => $_POST['title'],
+            ':body' => $_POST['body'],
+            ':problem' => $_POST['problem'],
+            ':icon' => $_POST['icon'],
+            ':date' => $_POST['date'],
+            ':friendlyUrl' => $_POST['friendlyUrl'],
+        ];
+        $db->query("UPDATE post SET title = :title, body = :body, problem = :problem, icon = :icon, date = :date , friendly_url = :friendlyUrl WHERE id = :id", $queryArgs);
         echo '<div class="infoblock"><p>Запись обновлена</p></div>';
-    endif;
+    }
+}
 
-endif;
-
-if (!empty($_POST['del_id'])) :
-
-    $sql = "DELETE FROM post WHERE id =  :id";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':id', $_POST['del_id'], PDO::PARAM_INT);
-    $stmt->execute();
-
+if (!empty($_POST['del_id'])) {
+    $db->query("DELETE FROM post WHERE id = :id", [':id' => intval($_POST['del_id'])]);
     echo '<div class="infoblock"><p>Запись удалена</p></div>';
-endif;
+}
+
+if (!empty($_GET['id'])) {
+    $id = $_GET['id'];
+    $postInfo = $db->firstRow("SELECT * FROM post WHERE  id = :id", [':id' => $id]);
+    $title = $postInfo['title'];
+    $problem = $postInfo['problem'];
+    $body = $postInfo['body'];
+    $icon = $postInfo['icon'];
+    $date = $postInfo['date'];
+    $friendlyUrl = $postInfo['friendly_url'];
+}
